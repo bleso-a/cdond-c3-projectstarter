@@ -1,17 +1,53 @@
 version: 2.1
 
+# Define the jobs for the frontend and backend
 jobs:
-  hello-world:
+  build-backend:
     docker:
-      - image: amazon/aws-cli
+      - image: 'circleci/node:13.8.0'
     steps:
       - checkout
+      # run install backend dependencies
       - run:
-          name: Say Hello
+          name: Install
           command: |
-            echo "Hello World"
+            cd backend
+            npm install
+      # run build backend dependencies
+      - run:
+          name: Build
+          command: |
+            cd backend
+            npm run build
 
+  # build frontend job
+  build-frontend:
+    docker:
+      - image: 'circleci/node:13.8.0'
+    steps:
+      - checkout
+      # run install frontend dependencies
+      - run:
+          name: Install
+          command: |
+            cd frontend
+            npm run build
+
+      # run build frontend dependencies
+      - run:
+          name: Build
+          command: |
+            cd frontend
+            npm run build
+
+# Define workflows for the frontend and backend
 workflows:
-  default:
+  # backend workflows
+  backend:
     jobs:
-      - hello-world
+      - build-backend
+
+  # frontend workflows
+  frontend:
+    jobs:
+      - build-frontend
