@@ -2,6 +2,7 @@ version: 2.1
 
 # Define the jobs for the frontend and backend
 jobs:
+  # build backend job
   build-backend:
     docker:
       - image: 'circleci/node:13.8.0'
@@ -20,6 +21,14 @@ jobs:
             cd backend
             npm run build
 
+  # test backend job
+  test-backend:
+    docker:
+      - image: 'circleci/node:13.8.0'
+    steps:
+      - checkout
+      # run install backend dependencies for test
+
   # build frontend job
   build-frontend:
     docker:
@@ -31,7 +40,7 @@ jobs:
           name: Install
           command: |
             cd frontend
-            npm run build
+            npm run install
 
       # run build frontend dependencies
       - run:
