@@ -40,7 +40,7 @@ jobs:
           name: Install
           command: |
             cd frontend
-            npm run install
+            npm install
 
       # run build frontend dependencies
       - run:
