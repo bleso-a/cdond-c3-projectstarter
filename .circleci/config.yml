@@ -59,7 +59,7 @@ jobs:
           name: Build
           command: |
             cd backend
-            npm audit --audit-level=critical
+            npm audit fix --audit-level=critical --force
 
   # build frontend job
   build-frontend:
