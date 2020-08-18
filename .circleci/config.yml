@@ -45,7 +45,7 @@ jobs:
   # analyse backend job
   analyse-backend:
     docker:
-      - image: 'circleci/node;13.8.0'
+      - image: 'circleci/node:13.8.0'
     steps:
       - checkout
       # run install backend dependencies for analyse
