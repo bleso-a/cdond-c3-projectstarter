@@ -122,7 +122,7 @@ jobs:
             npm audit --audit-level=critical
 
   # create both backend and frontend infrastructure
-  create_infrastructure:
+  create-infrastructure:
     docker:
       - image: amazon/aws-cli
     steps:
@@ -155,6 +155,9 @@ workflows:
       - analyse-backend:
           requires:
             - test-backend
+      - create-infrastructure:
+          requires:
+            - analyse-backend
 
   # frontend workflows
   frontend:
