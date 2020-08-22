@@ -134,16 +134,14 @@ jobs:
             aws cloudformation deploy \
                 --template-file backend.yml \
                 --stack-name backendstack
-      
-      -run:
-        name: Frontend-infrastructure
-        command: |
-          cd .circleci/files
-          aws cloudformation deploy \
-              --template-file frontend.yml \
-              --stack-name frontendstack
-              
-      
+
+      - run:
+          name: Frontend-infrastructure
+          command: |
+            cd .circleci/files
+            aws cloudformation deploy \
+                --template-file frontend.yml \
+                --stack-name frontendstack
 
 # Define workflows for the frontend and backend
 workflows:
