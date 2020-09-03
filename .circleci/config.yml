@@ -144,6 +144,7 @@ jobs:
                 --stack-name frontendstack
 
 # Define workflows for the frontend and backend
+# workflows
 workflows:
   # backend workflows
   backend:
