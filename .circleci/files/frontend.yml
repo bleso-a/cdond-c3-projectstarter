@@ -4,7 +4,7 @@ Parameters:
   ID:
     Description: Unique identifier.
     Type: String
-    Default: uniqueid
+    Default: 'ftnds3'
 
 Resources:
   WebsiteBucket:
