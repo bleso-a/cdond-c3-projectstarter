@@ -34,7 +34,7 @@ Resources:
       # Ubuntu 18 or higher works fine
       #ami-068663a3c619dd892
       #ami-0a634ae95e11c6f91
-      ImageId: ami-068663a3c619dd892
+      ImageId: ami-02e7fad8336aa2c57
       Tags:
         - Key: Name
           Value: !Sub backend-${ID}
