@@ -4,7 +4,7 @@ Parameters:
   ID:
     Description: Unique identifier.
     Type: String
-    Default: backend_id
+    Default: uniqueId
 
 Resources:
   InstanceSecurityGroup:
@@ -33,6 +33,7 @@ Resources:
       # Ubuntu 18 or higher works fine
       #ami-068663a3c619dd892
       #ami-0a634ae95e11c6f91
+      #ami-079652134906bcbad SFAfrica
       ImageId: ami-0ae5e54c24aa542bb
       Tags:
         - Key: Name
