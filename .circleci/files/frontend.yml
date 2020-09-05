@@ -1,16 +1,16 @@
-Description: >
-  UdaPeople frontend stack.
+Description: UdaPeople frontend stack.
+
 Parameters:
   ID:
     Description: Unique identifier.
     Type: String
-    Default: 'arns3'
+    Default: 'arnns3'
 
 Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub 'superpower-${ID}'
+      BucketName: !Sub 'udapeople-${ID}'
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
