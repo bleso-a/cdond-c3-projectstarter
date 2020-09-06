@@ -4,7 +4,7 @@ Parameters:
   ID:
     Description: Unique identifier.
     Type: String
-    Default: 'arnns3'
+    Default: 'bbuck'
 
 Resources:
   WebsiteBucket:
